@@ -1,0 +1,19 @@
+Torre de Aldum
+
+Otro día en prisión. Ya has perdido la cuenta, y hasta casi has olvidado el motivo por el que te encuentras allí. La Torre de Aldum lo rodea todo, incluso tus sentidos que se diluyen lentamente en la locura.
+
+Torre de Aldum es un videojuego estilo walking simulator y escape room, en el que podrás interactuar con tus compañeros reclusos, con otros guardias de la prisión y encontrar la forma de recuperar la libertad.
+
+Funcionalidades implementadas:
+
+-Movimiento básico WASD con rotación para el jugador
+-Celdas animadas con temporizadores y efectos de sonido
+-Compañeros de celda que al detectar al jugador con un RayCast obtienen su transform y lo siguen
+-Utilización de packs de assets de la Unity Store, armados personalmente en módulos que conforman el nivel
+-Colisión con paredes y trigger en el acceso al comedor
+-El script del trigger y de las celdas informan a un GameManager de tipo singleton que posteriormente entregará esa información a guardias de la prisión (todavía no implementados)
+-Separación en layers de los elementos de la escena, lo cual nos sirve para el raycast y el filtrado de las luces por las rejas.
+
+Descripción de la escena:
+
+Empiezas en tu celda, frente a un espejo. Sientes el sonido de la campana que anuncia el almuerzo. Tras las campanas, todas las celdas se abren. Puedes caminar hacia el comedor y tus compañeros te siguen.

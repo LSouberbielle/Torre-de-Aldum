@@ -14,16 +14,30 @@ public class PauseManager : MonoBehaviour
 
     public void PauseButton()
     {
-        pauseMenu.SetActive(true);
-            Time.timeScale = 0;
+        _pauseGame();
     }
     public void ContinueButton()
     {
-        pauseMenu.SetActive(false);
-        Time.timeScale = 1;
+        _continueGame();
     }
     public void MainMenu()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
+    private void _pauseGame()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.None;
+        AudioListener.pause = true;
+    }
+
+    private void _continueGame()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.Locked;
+        AudioListener.pause = false;
     }
 }

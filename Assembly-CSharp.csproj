@@ -78,6 +78,7 @@
      <Compile Include="Assets\Prefabs\Low Poly Guns\Scripts\GunView.cs" />
      <Compile Include="Assets\Scripts\PostProcessController.cs" />
      <Compile Include="Assets\Prefabs\Mini First Person Controller\Scripts\Components\GroundCheck.cs" />
+     <Compile Include="Assets\Scripts\PlayerRaycasting.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

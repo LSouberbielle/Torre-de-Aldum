@@ -38,8 +38,7 @@ public class NPCsBehaviours : MonoBehaviour
         var newRotation = Quaternion.LookRotation(playerRefDistance);
         transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * rotateSpeed);
         if (distanceToPlayer < stopDistance)
-            return;
-        transform.position += dir * (Time.deltaTime * moveSpeed);
+            transform.position += dir * (Time.deltaTime * moveSpeed);
     }
     
     protected void Patrol()

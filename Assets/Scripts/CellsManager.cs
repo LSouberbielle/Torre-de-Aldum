@@ -1,30 +1,33 @@
+
 using UnityEngine;
 public class CellsManager : MonoBehaviour
 {
-    [SerializeField] private float timeToRingBell = 7;
-    [SerializeField] private float timeToOpenCells = 19;
+    [SerializeField] private GameObject bells;
     [SerializeField] private AudioSource bellSounds;
     [SerializeField] private AudioSource cellSounds;
     [SerializeField] private AudioClip prisionBells;
     [SerializeField] private AudioClip cellsOpening;
     private void Update()
     {
-        timeToRingBell -= Time.deltaTime;
-        timeToOpenCells -= Time.deltaTime;
-        RingBell();
         OpenCells();
     }
 
-    private void RingBell()
-    {
-        if (timeToRingBell <= 0)
-        {
-            bellSounds.PlayOneShot(prisionBells);
-        }
-    }
     private void OpenCells()
     {
-        if (timeToOpenCells <= 0)
+        if (GameManager.Instance.journalIsClosed)
+        {
+            Invoke("RingBell", 7);
+            Invoke("PlayJailAnim", 22);
+            Destroy(gameObject, 25);
+            Destroy(bells,25);
+        }
+    }
+    private void RingBell()
+    {
+        bellSounds.PlayOneShot(prisionBells);
+    }
+    private void PlayJailAnim()
+    {
         {
             cellSounds.PlayOneShot(cellsOpening);
             GameManager.Instance.cellsAreOpen = true;

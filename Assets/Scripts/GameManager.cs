@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public bool cellsAreOpen;
     public bool playerInDinningRoom;
+    public bool journalIsClosed;
     [SerializeField] private UnityEvent playerReachedDinningRoom;
     private void Awake()
     {

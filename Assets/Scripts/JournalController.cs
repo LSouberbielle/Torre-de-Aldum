@@ -1,10 +1,9 @@
-using TMPro;
 using UnityEngine;
 
 public class JournalController : MonoBehaviour
 {
     private bool playerOnTrigger;
-    [SerializeField] private bool journalIsOpen;
+    [SerializeField] private bool journalIsOpen = false;
     [SerializeField] private GameObject pressEToInteract;
     [SerializeField] private GameObject pressQToExit;
     [SerializeField] private GameObject pressZToSwapPages;
@@ -48,7 +47,7 @@ public class JournalController : MonoBehaviour
             journalCamera.SetActive(true);
             Invoke(nameof(ShowJournalPage1), (float) 2.6);
             Invoke(nameof(CallJournalUI), (float) 2.6);
-            journalIsOpen = true;
+            Invoke(nameof(JournalAnimEnded), (float) 2.6);
         }
     }
 
@@ -89,10 +88,15 @@ public class JournalController : MonoBehaviour
 
     private void IfCloseJournal()
     {
-        if ((firstJournalPage || secondJournalPage) && journalIsOpen && Input.GetKeyDown(KeyCode.Q))
+        if (journalIsOpen && Input.GetKeyDown(KeyCode.Q))
         {
             CloseJournal();
             GameManager.Instance.journalIsClosed = true;
         }
+    }
+
+    private void JournalAnimEnded()
+    {
+        journalIsOpen = true;
     }
 }

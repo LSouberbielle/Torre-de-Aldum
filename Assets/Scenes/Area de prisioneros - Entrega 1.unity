@@ -2097,6 +2097,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5099330304684592459, guid: 349c32995c1da5545af61f3eb627471e, type: 3}
+      propertyPath: m_Name
+      value: Player_Journal
+      objectReference: {fileID: 0}
+    - target: {fileID: 5099330304684592459, guid: 349c32995c1da5545af61f3eb627471e, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}

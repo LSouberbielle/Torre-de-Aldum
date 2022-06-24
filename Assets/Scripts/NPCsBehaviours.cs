@@ -15,6 +15,7 @@ public class NPCsBehaviours : MonoBehaviour
     private int _index = 0;
     private int _waypointAmount;
 
+    
     protected void FollowSeenPlayer()
     {
         var hasSeenPlayer = Physics.Raycast(rayCastingNose.position, rayCastingNose.forward, raycastRange, objectToCollideWith);
@@ -37,7 +38,7 @@ public class NPCsBehaviours : MonoBehaviour
     {
         var newRotation = Quaternion.LookRotation(playerRefDistance);
         transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * rotateSpeed);
-        if (distanceToPlayer < stopDistance)
+        if (distanceToPlayer > stopDistance)
             transform.position += dir * (Time.deltaTime * moveSpeed);
     }
     

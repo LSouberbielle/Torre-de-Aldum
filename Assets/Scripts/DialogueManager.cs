@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,24 +8,36 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
 
-    public TextMeshPro nameText;
-    public TextMeshPro dialogueText;
+    public Text nameText;
+    public Text dialogueText;
 
     public Animator dialogueAnimator;
-
+    [SerializeField] private GameObject pressFToContinue;
     private Queue<string> sentences;
     void Start()
     {
         sentences = new Queue<string>();
     }
 
+    private void Update()
+    {
+        if (dialogueAnimator && Input.GetKeyDown(KeyCode.F))
+        {
+            DisplayNextSentence();
+        }
+    }
+
     public void StartDialogue(Dialogue dialogue)
     {
+        Debug.Log("Starting conversation with " + dialogue.name);
+        
         dialogueAnimator.SetBool("IsOpen", true);
         
         nameText.text = dialogue.name;
         
         sentences.Clear();
+        
+        pressFToContinue.SetActive(true);
 
         foreach (string sentece in dialogue.sentences)
         {
@@ -59,5 +72,6 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         dialogueAnimator.SetBool("IsOpen", false);
+        pressFToContinue.SetActive(false);
     }
 }

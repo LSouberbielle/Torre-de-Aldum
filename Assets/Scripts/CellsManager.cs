@@ -7,6 +7,7 @@ public class CellsManager : MonoBehaviour
     [SerializeField] private AudioSource cellSounds;
     [SerializeField] private AudioClip prisionBells;
     [SerializeField] private AudioClip cellsOpening;
+    
     private void Update()
     {
         OpenCells();
@@ -14,13 +15,11 @@ public class CellsManager : MonoBehaviour
 
     private void OpenCells()
     {
-        if (GameManager.Instance.journalIsClosed)
-        {
-            Invoke("RingBell", 7);
-            Invoke("PlayJailAnim", 22);
-            Destroy(gameObject, 25);
-            Destroy(bells,25);
-        }
+        if (!GameManager.Instance.journalIsClosed) return;
+        Invoke("RingBell", 7);
+        Invoke("PlayJailAnim", 22);
+        Destroy(gameObject, 25);
+        Destroy(bells,25);
     }
     private void RingBell()
     {

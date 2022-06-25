@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,18 +10,29 @@ public class GuardSpawner : MonoBehaviour
     public GameObject guard2;
     private UnityEvent _spawnGuards;
 
-    public void SpawnGuards()
+
+    private void Update()
+    {
+        CallSpawnGuards();
+    }
+
+
+    private void CallSpawnGuards()
     {
         if (GameManager.Instance.playerInDinningRoom)
         {
-            _spawnGuards = spawnGuards;
+            Invoke("SpawnGuards", 2);
+            Destroy(this,3);
         }
+    }
+    public void SpawnGuards()
+    {
+        Spawn();
     }
 
     private void Spawn()
     {
             guard1.SetActive(true);
             guard2.SetActive(true);
-            Debug.Log("Dinning Room Trigger envio info al GameManager, el GameManager comunica al Script GuardSpawner asignado al objeto GuardsWaypoints");
     }
 }

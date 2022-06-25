@@ -6,7 +6,6 @@ public class GuardsManager : NPCsBehaviours
     private void Update()
     {
         Patrol(); //Me gustaría que cuando se cumplen las condiciones para el FollowSeenPlayer deje de ejecutarse el Patrol, puede ser que sea con una coroutine?
-        FollowSeenPlayer();
     }
     /* private void Patrol()
     {

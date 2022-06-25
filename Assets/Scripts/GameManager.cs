@@ -1,5 +1,6 @@
+using System;
 using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -7,16 +8,28 @@ public class GameManager : MonoBehaviour
     public bool cellsAreOpen;
     public bool playerInDinningRoom;
     public bool journalIsClosed;
-    [SerializeField] private UnityEvent playerReachedDinningRoom;
+    public bool lightFaded;
+    public bool playerSat;
     private void Awake()
     {
         Instance = this;
     }
-    
-    //If the player arrives at the dinning room this happens
-    public void PlayerInDinningRoom()
+
+    public void Update()
     {
-        if(playerInDinningRoom)
-            Debug.Log("The player is in the dinning room, se comunica al GameManager");
+        LoadNextLevelCondition();
     }
+
+    private void LoadNextLevelCondition()
+    {
+        if (lightFaded) //Trate de hacer que la camara haga un fade out subiendo la opacidad de una imagen de la UI que cubre toda la camara pero no funciona, despues del fade carga otra escena
+        {
+            Invoke(nameof(LoadNextLevel),3);
+        }
+    }
+    private void LoadNextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+    
 }

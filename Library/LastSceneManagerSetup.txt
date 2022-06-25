@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Area de prisioneros - Entrega 1.unity
+- path: Assets/Scenes/Escena 2 - Dia de escape.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

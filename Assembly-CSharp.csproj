@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\CellAnimationManager.cs" />
      <Compile Include="Assets\Prefabs\Mini First Person Controller\Scripts\FirstPersonLook.cs" />
      <Compile Include="Assets\Prefabs\MagicMirror\Prefab\MirrorScript.cs" />
+     <Compile Include="Assets\Scripts\NPCDialogueTrigger.cs" />
      <Compile Include="Assets\Scripts\NpcData.cs" />
      <Compile Include="Assets\Prefabs\MagicMirror\Prefab\MirrorCameraScript.cs" />
      <Compile Include="Assets\Scripts\DinningRoomTrigger.cs" />
@@ -72,7 +73,6 @@
      <Compile Include="Assets\Scripts\InmatesManager.cs" />
      <Compile Include="Assets\Prefabs\MagicMirror\Prefab\MirrorReflectionScript.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
-     <Compile Include="Assets\Scripts\PlayerRaycasting.cs" />
      <Compile Include="Assets\Scripts\GuardsManager.cs" />
      <Compile Include="Assets\Scripts\DialogueManager.cs" />
      <Compile Include="Assets\Scripts\GuardSpawner.cs" />
@@ -82,7 +82,9 @@
      <Compile Include="Assets\Prefabs\Low Poly Guns\Scripts\GunView.cs" />
      <Compile Include="Assets\Scripts\PostProcessController.cs" />
      <Compile Include="Assets\Prefabs\Mini First Person Controller\Scripts\Components\GroundCheck.cs" />
-     <Compile Include="Assets\Scripts\NPCDialogueTrigger.cs" />
+     <Compile Include="Assets\Scripts\LunchTrigger.cs" />
+     <Compile Include="Assets\Scripts\FadeCamera.cs" />
+     <Compile Include="Assets\Scripts\JournalController2.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

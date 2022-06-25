@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +12,8 @@ public class DialogueManager : MonoBehaviour
     public Animator dialogueAnimator;
     [SerializeField] private GameObject pressFToContinue;
     private Queue<string> sentences;
+    private static readonly int IsOpen = Animator.StringToHash("IsOpen");
+
     void Start()
     {
         sentences = new Queue<string>();
@@ -28,10 +28,8 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void StartDialogue(Dialogue dialogue)
-    {
-        Debug.Log("Starting conversation with " + dialogue.name);
-        
-        dialogueAnimator.SetBool("IsOpen", true);
+    { 
+        dialogueAnimator.SetBool(IsOpen, true);
         
         nameText.text = dialogue.name;
         
@@ -63,7 +61,7 @@ public class DialogueManager : MonoBehaviour
     IEnumerator TypeSentence(string sentence)
     {
         dialogueText.text = "";
-        foreach (char letter in sentence.ToCharArray())
+        foreach (var letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
             yield return null;
@@ -71,7 +69,7 @@ public class DialogueManager : MonoBehaviour
     }
     void EndDialogue()
     {
-        dialogueAnimator.SetBool("IsOpen", false);
+        dialogueAnimator.SetBool(IsOpen, false);
         pressFToContinue.SetActive(false);
     }
 }

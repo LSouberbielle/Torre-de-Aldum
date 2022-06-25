@@ -1183,11 +1183,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   journalIsOpen: 0
-  pressEToInteract: {fileID: 0}
-  pressQToExit: {fileID: 0}
-  playerCamera: {fileID: 0}
-  journalCamera: {fileID: 0}
-  firstJournalPage: {fileID: 0}
+  pressEToInteract: {fileID: 1127987551}
+  pressQToExit: {fileID: 464080867}
+  playerCamera: {fileID: 491788565}
+  journalCamera: {fileID: 1684090848}
+  firstJournalPage: {fileID: 1102565847}
 --- !u!135 &667767203
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4218,7 +4218,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 865264935811517796, guid: 37dc0590b9da9d34383f8d647c26310f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.99
+      value: -4.01
       objectReference: {fileID: 0}
     - target: {fileID: 865264935811517796, guid: 37dc0590b9da9d34383f8d647c26310f, type: 3}
       propertyPath: m_LocalRotation.w

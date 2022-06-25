@@ -110,6 +110,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -265,8 +267,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
-    - Class: 89
-      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -405,8 +405,6 @@ ScriptsOnlyBuild:
     - Class: 82
       Script: {instanceID: 0}
     - Class: 83
-      Script: {instanceID: 0}
-    - Class: 89
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -1175,4 +1173,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Escena 1 - Area de prisioneros.unity
   - Assets/Scenes/Escena 2 - Dia de escape.unity
   playerPath: C:/Users/Lucho/Torre de Aldum/Torre-de-Aldum/Builds proyecto final/Reentrega
-    CoderHouse/My project (1).exe
+    CoderHouse 24-06/My project (1).exe

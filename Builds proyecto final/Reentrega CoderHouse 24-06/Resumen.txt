@@ -1,0 +1,8 @@
+Torre de Aldum
+
+La idea gira en escapar de la prisión junto con un compañero que te va a ayudar.
+En la reentrega pude implementar el sistema de diálogos, corregí los guardias que
+no se instanciaban y los otros bugs que me señalaste. También modifiqué los NPCs
+que tenían varios problemas de movilidad.
+
+
